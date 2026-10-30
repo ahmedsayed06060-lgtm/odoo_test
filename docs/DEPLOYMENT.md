@@ -5,17 +5,15 @@
 Repository: `ahmedsayed06060-lgtm/odoo_test`
 Configured public Pages address: `https://ahmedsayed06060-lgtm.github.io/odoo_test/`
 
-This is the configured address, not a claim that GitHub has already enabled the site. The GitHub deployment and live-site verification must both succeed before publication is complete.
+GitHub Pages is enabled at this address. A successful GitHub deployment and live-site verification are required before the website is available to visitors.
 
-## One-time setup
+## Repository configuration
 
-1. Open the repository on GitHub.
-2. Go to **Settings → Pages**.
-3. Under **Build and deployment**, choose **GitHub Actions** as the source.
-4. If the repository remains private, confirm that the account supports Pages for private repositories. Otherwise, the owner can explicitly choose to make the repository public. Making it public exposes its source and authored content, but never visitors’ browser-local progress.
-5. Open **Actions → Publish OdooPrep to GitHub Pages**, choose the session branch `arena/ef231288-odoo-test`, and run the workflow. Subsequent pushes to that branch publish automatically.
+The owner has made the repository public and selected **Settings → Pages → Build and deployment → Source → GitHub Actions**. GitHub reports the Pages source as `workflow` and the site as public. HTTPS is enforced.
 
-The current GitHub connection can push the workflow but cannot enable the repository’s Pages setting through the administration API. No personal access token is requested or stored by this project.
+Publication happens from `main`, which is the branch allowed by the `github-pages` environment. Merge reviewed changes into `main` to publish automatically. An owner can also open **Actions → Publish OdooPrep to GitHub Pages**, choose `main`, and select **Run workflow**. Work on feature/session branches does not overwrite the public production site.
+
+For a different repository or account, repeat the visibility and Pages setup and update the workflow’s live-test URL and Vite preview subpath to match that repository. No personal access token is requested or stored by this project; the workflow uses GitHub’s short-lived, permission-scoped token.
 
 ## Automated publication
 
