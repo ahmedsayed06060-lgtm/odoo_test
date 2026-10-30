@@ -1,0 +1,100 @@
+a001|advanced-accounting|18|g|a|Bank charges recur with predictable accounts. What standardizes their reconciliation?|تتكرر رسوم بنكية بحسابات متوقعة. ماذا يوحد تسويتها؟|adv_model|adv_asset,adv_lock,adv_cashbasis
+a002|advanced-accounting|19|c|a|An error is found in a locked period. What control should guide correction?|اكتشف خطأ بفترة مقفلة. أي رقابة توجه التصحيح؟|adv_lock|adv_model,adv_partial,adv_defer
+a003|advanced-accounting|18|k|a|A machine must be depreciated over its useful life. What defines the schedule?|يجب إهلاك آلة على عمرها الإنتاجي. ماذا يحدد الجدول؟|adv_asset|adv_writeoff,adv_partial,adv_model
+a004|advanced-accounting|18|x|a|A customer pays 700 of a 1,000 invoice without an approved discount. What remains?|يدفع عميل ٧٠٠ من فاتورة ١٠٠٠ دون خصم معتمد. ماذا يبقى؟|adv_partial|adv_writeoff,adv_lock,adv_asset
+a005|advanced-accounting|19|k|a|A genuine small rounding difference needs an approved adjustment. What treatment fits?|يحتاج فرق تقريب صغير حقيقي لتسوية معتمدة. أي معالجة تناسب؟|adv_writeoff|adv_partial,adv_asset,adv_lock
+a006|advanced-accounting|18|c|a|VAT is recognized on customer payment. What must be tested with partial settlement?|يعترف بضريبة القيمة المضافة عند دفع العميل. ماذا يختبر مع التسوية الجزئية؟|adv_cashbasis|adv_asset,adv_lock,adv_model
+a007|advanced-accounting|18|x|a|A service contract is extended after invoicing. What should be reviewed?|يمدد عقد خدمة بعد الفوترة. ماذا يُراجع؟|adv_defer|adv_writeoff,adv_model,adv_cashbasis
+a008|advanced-accounting|19|t|a|A reconciliation model should approve every unexplained bank difference automatically.|يجب أن يعتمد نموذج التسوية كل فرق بنكي غير مفسر تلقائيًا.|F|adv_model
+a009|advanced-accounting|18|m|a|Which preserve period-end accounting control? Select two.|أي مما يلي يحافظ على رقابة نهاية الفترة؟ اختر اثنين.|adv_lock+adv_partial|adv_asset,adv_model
+a010|advanced-accounting|20|k|a|A bank workflow changes after upgrade. What should be tested with representative transactions?|تتغير دورة بنكية بعد ترقية. ماذا يختبر بمعاملات ممثلة؟|adv_model|adv_asset,adv_defer,adv_lock
+a011|advanced-accounting|18|x|a|A large unmatched receipt is labelled rounding. What should happen instead?|يصنف مقبوض كبير غير مطابق كتقريب. ماذا يحدث بدل ذلك؟|adv_partial|adv_writeoff,adv_model,adv_defer
+a012|advanced-accounting|19|k|a|Why validate depreciation policy separately from vendor payment?|لماذا تتحقق سياسة الإهلاك منفصلة عن دفع المورد؟|adv_asset|adv_cashbasis,adv_model,adv_lock
+a013|advanced-accounting|18|s|a|A partial payment arrives under cash-basis VAT. What must the tax test include?|تصل دفعة جزئية في نظام ضريبة نقدي. ماذا يشمل اختبار الضريبة؟|adv_cashbasis|adv_asset,adv_defer,adv_partial
+a014|advanced-accounting|18|k|a|A user proposes bypassing a lock date. What should guide the correction?|يقترح مستخدم تجاوز تاريخ القفل. ماذا يوجه التصحيح؟|adv_lock|adv_writeoff,adv_model,adv_asset
+a015|valuation|18|c|a|Policy requires outgoing stock to use the oldest cost layers. Which method fits?|تشترط السياسة أقدم طبقات تكلفة للصادر. أي طريقة تناسب؟|val_fifo|val_avco,val_standard,val_interim
+a016|valuation|19|c|a|Policy requires a moving weighted-average unit value. Which method fits?|تشترط السياسة قيمة وحدة متوسطة مرجحة متحركة. أي طريقة تناسب؟|val_avco|val_fifo,val_standard,val_update
+a017|valuation|18|c|a|Management wants stable planned costs and explicit purchase variances. Which method fits?|تريد الإدارة تكاليف مخططة ثابتة وفروق شراء صريحة. أي طريقة تناسب؟|val_standard|val_avco,val_fifo,val_auto
+a018|valuation|18|g|a|Which setup posts inventory value changes from stock movements?|أي إعداد يرحل تغيرات قيمة المخزون من الحركات؟|val_auto|val_standard,val_interim,val_update
+a019|valuation|19|x|a|Interim stock balances remain after receipts. What should be investigated?|تبقى أرصدة مخزون وسيطة بعد الاستلامات. ماذا يُحقق؟|val_interim|val_fifo,val_avco,val_standard
+a020|valuation|18|k|a|An approved value correction must preserve receipt history. What should be used?|يجب أن يحفظ تصحيح قيمة معتمد تاريخ الاستلام. ماذا يستخدم؟|val_update|val_auto,val_interim,val_standard
+a021|valuation|18|t|a|FIFO valuation requires staff to physically pick the oldest unit.|يتطلب تقييم FIFO التقاط العاملين أقدم وحدة فعليًا.|F|val_fifo
+a022|valuation|19|m|a|Which are separate inventory-accounting design choices? Select two.|أي مما يلي خيارات تصميم منفصلة لمحاسبة المخزون؟ اختر اثنين.|val_avco+val_auto|val_interim,val_update
+a023|valuation|18|x|a|A standard-cost item is purchased above its standard. What should be reviewed?|يشترى صنف بتكلفة معيارية بأعلى من معياره. ماذا يُراجع؟|val_standard|val_fifo,val_interim,val_auto
+a024|valuation|20|k|a|A costing upgrade is planned. What should be compared before and after migration?|تخطط ترقية تكلفة. ماذا يُقارن قبل وبعد الترحيل؟|val_update|val_interim,val_auto,val_standard
+a025|valuation|18|k|a|Why can average cost differ from the latest purchase price?|لماذا يختلف متوسط التكلفة عن آخر سعر شراء؟|val_avco|val_standard,val_fifo,val_interim
+a026|valuation|19|x|a|Automated valuation posts to a wrong stock account. What should be reviewed?|يرحل التقييم الآلي لحساب مخزون خاطئ. ماذا يُراجع؟|val_auto|val_update,val_fifo,val_standard
+a027|valuation|18|k|a|What should be checked when receipt and vendor-bill amounts differ?|ماذا يفحص عند اختلاف الاستلام وفاتورة المورد؟|val_interim|val_avco,val_standard,val_update
+a028|valuation|18|t|a|Costing method and automated stock accounting are distinct configuration choices.|طريقة التكلفة ومحاسبة المخزون الآلية خيارا إعداد متميزان.|T|val_auto
+a029|reordering|18|g|a|What should drive minimum and maximum stock-rule levels?|ما الذي يوجه حدي قاعدة المخزون الأدنى والأقصى؟|reorder_minmax|reorder_mps,reorder_mto,reorder_review
+a030|reordering|19|c|i|A vendor supplies packs of 12. Which parameter respects that increment?|يورد مورد عبوات من ١٢. أي معامل يحترم الزيادة؟|reorder_multiple|reorder_minmax,reorder_lead,reorder_mps
+a031|reordering|18|c|a|An item should be sourced only for a specific customer demand. Which route fits?|يجب توريد صنف لطلب عميل محدد فقط. أي مسار يناسب؟|reorder_mto|reorder_minmax,reorder_mps,reorder_multiple
+a032|reordering|18|c|a|A planner needs period-based production and purchasing plans. Which tool fits?|يحتاج مخطط لخطط إنتاج وشراء حسب الفترات. أي أداة تناسب؟|reorder_mps|reorder_multiple,reorder_review,reorder_mto
+a033|reordering|19|x|a|Goods are ordered on the required date and arrive late. What was ignored?|تطلب البضائع بتاريخ الحاجة وتصل متأخرة. ماذا أهمل؟|reorder_lead|reorder_multiple,reorder_mps,reorder_review
+a034|reordering|18|k|a|An automated RFQ proposes an unusually large quantity. What should precede confirmation?|يقترح طلب سعر آلي كمية كبيرة غير معتادة. ماذا يسبق التأكيد؟|reorder_review|reorder_mps,reorder_mto,reorder_multiple
+a035|reordering|18|t|a|Min/max replenishment should consider forecast demand, not only on-hand stock.|يجب أن يراعي توريد الحدين الطلب المتوقع لا المخزون المتاح فقط.|T|reorder_minmax
+a036|reordering|19|x|a|A rule requests 105 units but the vendor accepts multiples of 12. What needs correction?|تطلب قاعدة ١٠٥ وحدات لكن المورد يقبل مضاعفات ١٢. ماذا يصحح؟|reorder_multiple|reorder_minmax,reorder_lead,reorder_review
+a037|reordering|18|m|a|Which inputs support realistic replenishment? Select two.|أي المدخلات تدعم توريدًا واقعيًا؟ اختر اثنين.|reorder_minmax+reorder_lead|reorder_mps,reorder_review
+a038|reordering|20|k|a|Suggested stock levels appear after an upgrade. What remains a business decision?|تظهر مستويات مخزون مقترحة بعد ترقية. ما الذي يظل قرار أعمال؟|reorder_minmax|reorder_multiple,reorder_mto,reorder_mps
+a039|reordering|18|x|a|Customer-specific demand replenishes general stock without its intended link. What should be reviewed?|يلبى طلب عميل بمخزون عام دون رابطه المقصود. ماذا يُراجع؟|reorder_mto|reorder_minmax,reorder_multiple,reorder_lead
+a040|reordering|19|k|a|Why is an MPS proposal not a released manufacturing order?|لماذا ليس اقتراح MPS أمر تصنيع محررًا؟|reorder_mps|reorder_review,reorder_mto,reorder_minmax
+a041|reordering|18|s|a|A supplier adds five days to delivery lead time. What needs reassessment?|يضيف مورد خمسة أيام للمهلة. ماذا يحتاج إعادة تقييم؟|reorder_lead|reorder_multiple,reorder_mps,reorder_review
+a042|reordering|18|k|a|What should a buyer trace when an RFQ proposal appears unexpected?|ماذا يتتبع المشتري عند ظهور اقتراح طلب سعر غير متوقع؟|reorder_review|reorder_mps,reorder_multiple,reorder_mto
+a043|routes|18|c|a|Goods arriving in receiving must move onward to quality storage. Which rule fits?|يجب نقل الوارد للاستلام إلى تخزين الجودة. أي قاعدة تناسب؟|route_push|route_pull,route_fefo,route_storage
+a044|routes|19|c|a|A destination needs goods from upstream stock. Which rule originates the requirement?|تحتاج وجهة لبضائع من مخزون أعلى المسار. أي قاعدة تنشئ المتطلب؟|route_pull|route_push,route_package,route_putaway
+a045|routes|18|g|a|Electronics should go to a secure bin after receipt. What should be configured?|تذهب الإلكترونيات لحاوية آمنة بعد الاستلام. ماذا يعد؟|route_putaway|route_fefo,route_storage,route_package
+a046|routes|18|c|a|A food warehouse prioritizes the nearest expiry date. Which removal strategy fits?|يقدم مستودع غذاء الأقرب انتهاءً. أي استراتيجية إزالة تناسب؟|route_fefo|route_push,route_pull,route_storage
+a047|routes|19|c|a|A chilled bin has capacity and product-compatibility limits. What can enforce them?|لحاوية مبرة حدود سعة وتوافق منتجات. ما الذي يفرضها؟|route_storage|route_fefo,route_package,route_push
+a048|routes|18|s|i|A pallet must remain identifiable through internal moves. What should be tracked?|يجب تعريف منصة البضائع عبر الحركات الداخلية. ماذا يتتبع؟|route_package|route_putaway,route_storage,route_pull
+a049|routes|18|t|a|Push and pull rules model the same direction of stock-flow logic.|تمثل قاعدتا الدفع والسحب اتجاه منطق تدفق المخزون نفسه.|F|route_push
+a050|routes|19|x|a|FEFO behaves incorrectly because expiry data is missing. What is the root issue?|يسلك FEFO خطأ لنقص بيانات الصلاحية. ما المشكلة الجذرية؟|route_fefo|route_putaway,route_storage,route_package
+a051|routes|18|m|a|What should be tested after configuring automated storage? Select two.|ماذا يختبر بعد إعداد التخزين الآلي؟ اختر اثنين.|route_putaway+route_storage|route_fefo,route_package
+a052|routes|20|k|a|Route configuration changes after upgrade. What should a receipt-to-stock test prove?|تتغير إعدادات المسارات بعد ترقية. ماذا يثبت اختبار الاستلام للتخزين؟|route_push|route_fefo,route_package,route_storage
+a053|routes|18|x|a|Destination demand does not create an upstream transfer. What should be investigated?|لا ينشئ طلب الوجهة تحويلًا أعلى المسار. ماذا يحقق؟|route_pull|route_push,route_putaway,route_fefo
+a054|routes|19|x|a|A package label changed but its recorded location did not. What needs correction?|تغير ملصق طرد لا موقعه المسجل. ماذا يحتاج تصحيحًا؟|route_package|route_storage,route_putaway,route_pull
+a055|routes|18|k|a|Why test putaway suggestions against physical bin capacity?|لماذا تختبر اقتراحات التخزين مقابل سعة الحاوية الفعلية؟|route_storage|route_fefo,route_pull,route_push
+a056|routes|18|k|a|How does FEFO differ from FIFO valuation?|كيف يختلف FEFO عن تقييم FIFO؟|route_fefo|route_putaway,route_package,route_storage
+a057|dropshipping|18|c|i|A reseller wants direct supplier-to-customer delivery. Which route fits?|يريد معيد بيع تسليم المورد للعميل مباشرة. أي مسار يناسب؟|drop_route|drop_vendor,drop_finance,drop_status
+a058|dropshipping|19|x|a|Dropship demand cannot identify a supplier. What product data is missing?|لا يحدد طلب الشحن المباشر موردًا. أي بيانات منتج ناقصة؟|drop_vendor|drop_route,drop_finance,drop_status
+a059|dropshipping|18|k|a|Should vendor cost automatically become the customer’s selling price?|هل تصبح تكلفة المورد سعر بيع للعميل تلقائيًا؟|drop_finance|drop_route,drop_vendor,drop_status
+a060|dropshipping|18|k|a|A customer disputes delivery although the dropship PO is confirmed. What evidence is needed?|ينازع عميل التسليم رغم تأكيد أمر الشحن المباشر. أي دليل يلزم؟|drop_status|drop_finance,drop_vendor,drop_route
+a061|dropshipping|19|t|i|Dropshipping requires goods to enter the reseller’s warehouse first.|يتطلب الشحن المباشر دخول البضائع مستودع معيد البيع أولًا.|F|drop_route
+a062|dropshipping|18|m|a|Which are necessary dropshipping controls? Select two.|أي مما يلي ضوابط لازمة للشحن المباشر؟ اختر اثنين.|drop_vendor+drop_status|drop_route,drop_finance
+a063|dropshipping|18|x|a|A customer invoice uses vendor-side tax assumptions. What should be reviewed?|تستخدم فاتورة عميل افتراضات ضرائب المورد. ماذا يراجع؟|drop_finance|drop_status,drop_vendor,drop_route
+a064|dropshipping|20|k|a|A direct-fulfillment supplier changes. What should be updated before new promises?|يتغير مورد التنفيذ المباشر. ماذا يحدث قبل وعود جديدة؟|drop_vendor|drop_finance,drop_status,drop_route
+a065|dropshipping|18|s|i|A sale needs a vendor shipment to the customer’s address. What should carry this flow?|يحتاج بيع لشحنة مورد بعنوان العميل. ماذا يحمل التدفق؟|drop_route|drop_finance,drop_vendor,drop_status
+a066|dropshipping|19|k|a|Why include vendor dispatch confirmation in customer-service procedures?|لماذا يدخل تأكيد شحن المورد في إجراءات خدمة العملاء؟|drop_status|drop_route,drop_vendor,drop_finance
+a067|dropshipping|18|x|a|Delivery is correct but customer margin is wrong. Which relationship needs review?|التسليم صحيح لكن هامش العميل خاطئ. أي علاقة تراجع؟|drop_finance|drop_status,drop_route,drop_vendor
+a068|dropshipping|18|t|a|A dropship purchase and customer sale remain separate commercial documents.|يظل شراء الشحن المباشر وبيع العميل مستندين تجاريين منفصلين.|T|drop_finance
+a069|dropshipping|19|k|a|What should be tested when a new product is enabled for direct fulfillment?|ماذا يختبر عند تفعيل منتج للتنفيذ المباشر؟|drop_vendor|drop_route,drop_status,drop_finance
+a070|dropshipping|18|k|a|What physically distinguishes dropshipping from ordinary stock sales?|ما الذي يميز الشحن المباشر ماديًا عن مبيعات المخزون العادية؟|drop_route|drop_finance,drop_vendor,drop_status
+a071|landed|18|c|a|Ocean freight depends mainly on volume. Which allocation basis is defensible?|يعتمد الشحن البحري أساسًا على الحجم. أي أساس توزيع قابل للتبرير؟|landed_allocate|landed_late,landed_validate,landed_eligible
+a072|landed|19|x|a|Freight cannot become inventory value on a service line. What should be checked?|لا يصبح الشحن قيمة مخزون ببند خدمة. ماذا يفحص؟|landed_eligible|landed_allocate,landed_late,landed_validate
+a073|landed|18|k|a|Freight arrives after some imported goods were sold. What needs special review?|يصل الشحن بعد بيع بعض الواردات. ماذا يحتاج مراجعة خاصة؟|landed_late|landed_allocate,landed_eligible,landed_validate
+a074|landed|18|k|a|Which inputs should be checked before validating a duty allocation?|أي المدخلات تفحص قبل تأكيد توزيع رسم جمركي؟|landed_validate|landed_late,landed_eligible,landed_allocate
+a075|landed|19|t|a|Equal allocation is always the most accurate basis for landed costs.|التوزيع المتساوي أدق أساس للتكاليف الواردة دائمًا.|F|landed_allocate
+a076|landed|18|m|a|Which are sound landed-cost controls? Select two.|أي مما يلي ضوابط سليمة للتكاليف الواردة؟ اختر اثنين.|landed_validate+landed_eligible|landed_late,landed_allocate
+a077|landed|18|x|a|Heavy goods receive too little freight under equal shares. What should change?|تحصل بضائع ثقيلة على شحن قليل بالتوزيع المتساوي. ماذا يتغير؟|landed_allocate|landed_late,landed_validate,landed_eligible
+a078|landed|20|k|a|An import-cost workflow changes after upgrade. What should be compared on a shipment?|تتغير دورة تكلفة استيراد بعد ترقية. ماذا يقارن بشحنة؟|landed_validate|landed_allocate,landed_late,landed_eligible
+a079|landed|18|s|a|Duty relates to specific received products. What should be selected before allocation?|يتعلق رسم بمنتجات مستلمة محددة. ماذا يختار قبل التوزيع؟|landed_validate|landed_late,landed_eligible,landed_allocate
+a080|landed|19|k|a|Why check costing setup before adding import costs?|لماذا يفحص إعداد التكلفة قبل إضافة تكاليف استيراد؟|landed_eligible|landed_allocate,landed_late,landed_validate
+a081|landed|18|x|a|A late carrier invoice changes remaining stock value. What supports the adjustment?|تغير فاتورة ناقل متأخرة قيمة المخزون المتبقي. ماذا يدعم التعديل؟|landed_late|landed_allocate,landed_eligible,landed_validate
+a082|landed|18|k|a|Why is allocation basis a business decision rather than formatting?|لماذا يكون أساس التوزيع قرار أعمال لا تنسيقًا؟|landed_allocate|landed_validate,landed_late,landed_eligible
+a083|landed|19|t|a|Landed-cost posting can affect inventory value and cost of goods sold.|قد يؤثر ترحيل التكلفة الواردة على قيمة المخزون وتكلفة المبيعات.|T|landed_validate
+a084|workcenters|18|c|a|A machine processes two units together only on staffed shifts. What should planning reflect?|تعالج آلة وحدتين معًا في shifts موظفة فقط. ماذا يعكس التخطيط؟|work_capacity|work_alternative,work_oee,work_setup
+a085|workcenters|19|c|a|Every batch needs 30 minutes of setup regardless of quantity. Where is this represented?|تحتاج كل دفعة ٣٠ دقيقة إعداد أيًا كانت الكمية. أين تمثل؟|work_setup|work_capacity,work_alternative,work_oee
+a086|workcenters|18|c|a|An operation can use either of two qualified machines. What adds flexibility?|تستخدم عملية أيًا من آلتين مؤهلتين. ماذا يضيف المرونة؟|work_alternative|work_setup,work_capacity,work_oee
+a087|workcenters|18|k|e|Output is high but downtime and defects are frequent. Which analysis gives balance?|الإنتاج مرتفع لكن التوقف والعيوب متكررة. أي تحليل يعطي توازنًا؟|work_oee|work_capacity,work_setup,work_alternative
+a088|workcenters|19|t|a|Theoretical machine speed alone is enough to promise capacity.|السرعة النظرية للآلة وحدها تكفي للوعد بالطاقة.|F|work_capacity
+a089|workcenters|18|x|a|Small batches are late because setup was omitted. What needs correction?|تتأخر دفعات صغيرة لإغفال الإعداد. ماذا يصحح؟|work_setup|work_alternative,work_oee,work_capacity
+a090|workcenters|18|m|a|What makes an alternative work center valid? Select two.|ما الذي يجعل مركز العمل البديل صالحًا؟ اختر اثنين.|work_alternative+work_capacity|work_setup,work_oee
+a091|workcenters|20|k|a|Planning views change after upgrade. What should planners validate on the shop floor?|تتغير واجهات التخطيط بعد ترقية. ماذا يتحقق منه المخططون بالورشة؟|work_capacity|work_setup,work_oee,work_alternative
+a092|workcenters|18|x|a|An unqualified machine is chosen for its free capacity. What should constrain selection?|تختار آلة غير مؤهلة لتوافر طاقتها. ماذا يقيد الاختيار؟|work_alternative|work_oee,work_setup,work_capacity
+a093|workcenters|19|k|e|Why break OEE into underlying loss categories?|لماذا تفصل OEE إلى فئات خسائر أساسية؟|work_oee|work_capacity,work_setup,work_alternative
+a094|workcenters|18|s|a|Maintenance shutdown overlaps a production promise. Which model exposes the conflict?|يتداخل توقف صيانة مع وعد إنتاج. أي نموذج يكشف التعارض؟|work_capacity|work_oee,work_setup,work_alternative
+a095|workcenters|18|k|a|How can cleanup time affect a production quotation?|كيف يؤثر وقت التنظيف على عرض سعر إنتاج؟|work_setup|work_oee,work_alternative,work_capacity
+a096|workcenters|19|t|a|Alternative work centers must preserve process and quality requirements.|يجب أن تحافظ مراكز العمل البديلة على متطلبات العملية والجودة.|T|work_alternative
+a097|bom|18|c|a|A bundle sells existing components without production. Which BOM type fits?|يباع طقم من مكونات قائمة دون إنتاج. أي نوع قائمة يناسب؟|bom_kit|bom_variant,bom_operations,bom_eco
+a098|bom|19|c|a|Red and blue variants need different housings. What should the BOM define?|يحتاج متغيران أحمر وأزرق هياكل مختلفة. ماذا تعرف القائمة؟|bom_variant|bom_kit,bom_eco,bom_operations
+a099|bom|18|g|a|What adds work-center steps and durations to a manufacturing definition?|ما الذي يضيف خطوات ومدد مراكز العمل لتعريف التصنيع؟|bom_operations|bom_kit,bom_variant,bom_eco
+a100|bom|18|c|a|A BOM revision needs engineering approval with PLM. Which process fits?|تحتاج مراجعة قائمة مواد اعتمادًا هندسيًا مع PLM. أي إجراء يناسب؟|bom_eco|bom_variant,bom_kit,bom_operations

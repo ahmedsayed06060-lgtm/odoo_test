@@ -1,0 +1,258 @@
+{
+  "navigation": {
+    "en": "A sales manager saves a filter for overdue quotations and reviews it each Monday.",
+    "ar": "يحفظ مدير مبيعات مرشحًا لعروض الأسعار المتأخرة ويراجعه كل اثنين."
+  },
+  "editions": {
+    "en": "A retailer lists required apps and checks the intended edition before requesting a proposal.",
+    "ar": "يسرد متجر التطبيقات المطلوبة ويفحص الطبعة المقصودة قبل طلب عرض."
+  },
+  "hosting": {
+    "en": "A partner rehearses a restore on staging before approving the production hosting plan.",
+    "ar": "يتدرب شريك على الاستعادة في بيئة اختبار قبل اعتماد خطة الاستضافة الإنتاجية."
+  },
+  "access": {
+    "en": "A cashier can process sales but cannot change company-wide accounting settings.",
+    "ar": "يعالج أمين الصندوق المبيعات لكنه لا يغير إعدادات المحاسبة العامة للشركة."
+  },
+  "settings": {
+    "en": "A distributor tests outgoing quotations with a real customer address before launch.",
+    "ar": "يختبر موزع عروض الأسعار الصادرة بعنوان عميل حقيقي قبل الإطلاق."
+  },
+  "companies": {
+    "en": "An Egyptian company invoices a European customer while keeping its books in EGP.",
+    "ar": "تفوتر شركة مصرية عميلًا أوروبيًا مع الاحتفاظ بدفاترها بالجنيه المصري."
+  },
+  "erp": {
+    "en": "A buyer traces a vendor bill back through its receipt and purchase order.",
+    "ar": "يتتبع مشترٍ فاتورة مورد عبر الاستلام وأمر الشراء."
+  },
+  "crm": {
+    "en": "A distributor qualifies an enquiry, schedules a call, then prepares a linked quotation.",
+    "ar": "يؤهل موزع استفسارًا ويجدول مكالمة ثم يعد عرض سعر مرتبطًا."
+  },
+  "sales": {
+    "en": "A wholesaler confirms a quotation after checking the branch delivery address and agreed price.",
+    "ar": "يؤكد تاجر جملة عرض سعر بعد فحص عنوان تسليم الفرع والسعر المتفق عليه."
+  },
+  "purchase": {
+    "en": "A buyer receives 80 of 100 ordered units and investigates a bill for 100.",
+    "ar": "يستلم مشترٍ ٨٠ من ١٠٠ وحدة مطلوبة ويحقق في فاتورة بمئة وحدة."
+  },
+  "inventory": {
+    "en": "A warehouse checks reservations and incoming receipts before promising available stock.",
+    "ar": "يفحص مستودع الحجوزات والاستلامات قبل الوعد بالمخزون المتاح."
+  },
+  "accounting": {
+    "en": "An accountant posts an invoice, records the actual payment, and matches the bank feed.",
+    "ar": "يرحل محاسب فاتورة ويسجل الدفعة الفعلية ويطابق كشف البنك."
+  },
+  "pos": {
+    "en": "A cashier closes the session after checking cash and card settlement evidence.",
+    "ar": "يغلق أمين الصندوق الجلسة بعد فحص أدلة تسوية النقد والبطاقات."
+  },
+  "mrp": {
+    "en": "A workshop confirms an MO, checks components, and records the finished quantity.",
+    "ar": "تؤكد ورشة أمر تصنيع وتفحص المكونات وتسجل الكمية التامة."
+  },
+  "project": {
+    "en": "A consulting team separates design and testing tasks under one client deliverable.",
+    "ar": "يفصل فريق استشارات مهام التصميم والاختبار تحت تسليم واحد للعميل."
+  },
+  "timesheets": {
+    "en": "A consultant records two hours on the client’s configuration task for weekly review.",
+    "ar": "يسجل مستشار ساعتين على مهمة إعداد العميل للمراجعة الأسبوعية."
+  },
+  "employees": {
+    "en": "HR assigns induction activities to IT and the department manager before a joiner starts.",
+    "ar": "تسند الموارد البشرية أنشطة تهيئة لتقنية المعلومات ومدير القسم قبل بدء الموظف."
+  },
+  "payroll": {
+    "en": "A payroll officer tests an allowance and deduction before confirming the monthly batch.",
+    "ar": "يختبر مسؤول الرواتب بدلًا واستقطاعًا قبل تأكيد الدفعة الشهرية."
+  },
+  "expenses": {
+    "en": "A consultant submits a hotel receipt for approval, posting, and reimbursement.",
+    "ar": "يقدم مستشار إيصال فندق للاعتماد والترحيل والسداد."
+  },
+  "fleet": {
+    "en": "A delivery company records fuel and service costs against each van.",
+    "ar": "تسجل شركة توصيل تكاليف الوقود والخدمة لكل شاحنة صغيرة."
+  },
+  "subscriptions": {
+    "en": "A software reseller reviews next quarter’s renewal products and prices with its customer.",
+    "ar": "يراجع معيد بيع برمجيات منتجات وأسعار تجديد الربع القادم مع عميله."
+  },
+  "rental": {
+    "en": "An equipment hire company checks availability before confirming a weekend reservation.",
+    "ar": "تفحص شركة تأجير معدات التوافر قبل تأكيد حجز عطلة نهاية الأسبوع."
+  },
+  "helpdesk": {
+    "en": "A support team links a defective-product ticket to a replacement workflow.",
+    "ar": "يربط فريق دعم تذكرة منتج معيب بدورة استبدال."
+  },
+  "website": {
+    "en": "A retailer tests checkout payment, shipping, and the resulting delivery order.",
+    "ar": "يختبر متجر دفع الطلب والشحن وأمر التسليم الناتج."
+  },
+  "email": {
+    "en": "A retailer sends a test campaign and checks its unsubscribe link before launch.",
+    "ar": "يرسل متجر حملة اختبار ويفحص رابط إلغاء الاشتراك قبل الإطلاق."
+  },
+  "automation": {
+    "en": "A nurture journey sends a reminder only to qualifying contacts who have not purchased.",
+    "ar": "ترسل رحلة رعاية تذكيرًا فقط لجهات الاتصال المؤهلة التي لم تشتر."
+  },
+  "documents": {
+    "en": "Finance shares three audit files through a link that expires after the review.",
+    "ar": "تشارك المالية ثلاثة ملفات تدقيق برابط ينتهي بعد المراجعة."
+  },
+  "quality": {
+    "en": "A receiving team measures a critical dimension and raises an alert for a failed batch.",
+    "ar": "يقيس فريق الاستلام بعدًا حرجًا وينشئ تنبيهًا لدفعة فاشلة."
+  },
+  "maintenance": {
+    "en": "A factory coordinates a planned compressor service with the production schedule.",
+    "ar": "ينسق مصنع خدمة ضاغط مخططة مع جدول الإنتاج."
+  },
+  "fieldservice": {
+    "en": "A technician records readings, parts, and customer confirmation after an on-site repair.",
+    "ar": "يسجل فني قراءات وقطعًا وتأكيد العميل بعد إصلاح بالموقع."
+  },
+  "advanced-accounting": {
+    "en": "An accountant matches a partial bank receipt and leaves the approved residual balance.",
+    "ar": "يطابق محاسب مقبوضًا بنكيًا جزئيًا ويترك الرصيد المتبقي المعتمد."
+  },
+  "valuation": {
+    "en": "A distributor reviews FIFO stock value separately from the physical picking sequence.",
+    "ar": "يراجع موزع قيمة مخزون FIFO منفصلة عن تسلسل الالتقاط الفعلي."
+  },
+  "reordering": {
+    "en": "A buyer accounts for a ten-day supplier lead time before setting reorder levels.",
+    "ar": "يراعي مشترٍ مهلة مورد عشرة أيام قبل ضبط مستويات إعادة الطلب."
+  },
+  "routes": {
+    "en": "A food warehouse directs nearest-expiry stock to outbound picking.",
+    "ar": "يوجه مستودع غذاء المخزون الأقرب انتهاءً إلى الالتقاط الصادر."
+  },
+  "dropshipping": {
+    "en": "A reseller asks its vendor to confirm direct shipment to the customer’s branch.",
+    "ar": "يطلب معيد بيع من مورده تأكيد الشحن المباشر لفرع العميل."
+  },
+  "landed": {
+    "en": "An importer allocates ocean freight by volume across a mixed shipment.",
+    "ar": "يوزع مستورد شحنًا بحريًا حسب الحجم على شحنة مختلطة."
+  },
+  "workcenters": {
+    "en": "A planner includes machine setup and staffed shifts before promising a production date.",
+    "ar": "يدرج مخطط إعداد الآلة والورديات الموظفة قبل الوعد بتاريخ إنتاج."
+  },
+  "bom": {
+    "en": "A furniture maker selects different components for each product finish variant.",
+    "ar": "يختار مصنّع أثاث مكونات مختلفة لكل متغير تشطيب للمنتج."
+  },
+  "agreements": {
+    "en": "A procurement team compares three suppliers’ prices and delivery terms before awarding a contract.",
+    "ar": "يقارن فريق مشتريات أسعار ثلاثة موردين وشروط تسليمهم قبل ترسية عقد."
+  },
+  "analytic": {
+    "en": "A shared utility bill is allocated between production and administration.",
+    "ar": "يوزع فاتورة مرافق مشتركة بين الإنتاج والإدارة."
+  },
+  "budget": {
+    "en": "A department compares six months of posted actuals with its six-month approved budget.",
+    "ar": "يقارن قسم ستة أشهر من القيم المرحلة بموازنته المعتمدة لستة أشهر."
+  },
+  "warehouses": {
+    "en": "A central warehouse supplies a regional site with a two-day transit lead time.",
+    "ar": "يمد مستودع مركزي موقعًا إقليميًا بمهلة عبور يومين."
+  },
+  "advanced-pos": {
+    "en": "A restaurant tests a split bill while preserving the original table order.",
+    "ar": "يختبر مطعم فاتورة مقسمة مع الحفاظ على طلب الطاولة الأصلي."
+  },
+  "workflows": {
+    "en": "An automation creates an accountant’s review activity for an exceptional credit exposure.",
+    "ar": "تنشئ أتمتة نشاط مراجعة محاسب لتعرض ائتماني استثنائي."
+  },
+  "reporting": {
+    "en": "A manager compares regional sales using the same dates and company filter.",
+    "ar": "يقارن مدير مبيعات إقليمية باستخدام التواريخ ومرشح الشركة نفسيهما."
+  },
+  "requirements": {
+    "en": "A client explains the business delay before the consultant proposes an approval workflow.",
+    "ar": "يشرح عميل تأخر الأعمال قبل أن يقترح المستشار دورة موافقة."
+  },
+  "methodology": {
+    "en": "A project validates a small order-to-cash cycle with key users every week.",
+    "ar": "يتحقق مشروع من دورة صغيرة من الطلب إلى التحصيل مع المستخدمين الرئيسيين أسبوعيًا."
+  },
+  "mapping": {
+    "en": "A distributor maps customer returns, approvals, and warehouse handoffs before configuration.",
+    "ar": "يرسم موزع مرتجعات العملاء والموافقات وتسليمات المستودع قبل الإعداد."
+  },
+  "database": {
+    "en": "A consultant records enabled settings and tests them with a cashier’s actual role.",
+    "ar": "يسجل مستشار الإعدادات المفعلة ويختبرها بالدور الفعلي لأمين الصندوق."
+  },
+  "masterdata": {
+    "en": "A data owner resolves duplicate supplier identities before the migration load.",
+    "ar": "يحسم مالك البيانات هويات الموردين المكررة قبل تحميل الترحيل."
+  },
+  "migration": {
+    "en": "A team imports a sample of orders with customer external IDs and reconciles the totals.",
+    "ar": "يستورد فريق عينة طلبات بمعرفات العملاء الخارجية ويطابق الإجماليات."
+  },
+  "opening": {
+    "en": "A company agrees a cutoff and approves a balanced opening journal before launch.",
+    "ar": "تتفق شركة على تاريخ قطع وتعتمد يومية افتتاحية متوازنة قبل الإطلاق."
+  },
+  "localization": {
+    "en": "An Egyptian company validates its chart, VAT treatment, and electronic invoice flow with local experts.",
+    "ar": "تتحقق شركة مصرية من دليل الحسابات ومعالجة القيمة المضافة والفوترة الإلكترونية مع خبراء محليين."
+  },
+  "taxes": {
+    "en": "A business tests domestic, export, and exempt invoices against expected tax amounts.",
+    "ar": "يختبر عمل فواتير محلية وتصدير ومعفاة مقابل المبالغ الضريبية المتوقعة."
+  },
+  "training": {
+    "en": "A cashier demonstrates a refund using the actual till role and a representative order.",
+    "ar": "يبرهن أمين الصندوق استردادًا باستخدام دور الصندوق الفعلي وطلب ممثل."
+  },
+  "golive": {
+    "en": "A project rehearses final migration, validation, ownership, and rollback checkpoints.",
+    "ar": "يتدرب مشروع على الترحيل النهائي والتحقق والملكية ونقاط التراجع."
+  },
+  "uat": {
+    "en": "A customer tests a sale through delivery, invoice, payment, and bank reconciliation.",
+    "ar": "يختبر عميل بيعًا عبر التسليم والفاتورة والدفع والتسوية البنكية."
+  },
+  "change": {
+    "en": "A branch champion explains a new approval responsibility and collects practical feedback.",
+    "ar": "يشرح داعم فرع مسؤولية موافقة جديدة ويجمع ملاحظات عملية."
+  },
+  "troubleshooting": {
+    "en": "A consultant reproduces a cashier’s issue with the same role, product, and company.",
+    "ar": "يعيد مستشار حدوث مشكلة صندوق بالدور والمنتج والشركة نفسها."
+  },
+  "support": {
+    "en": "A stabilization team prioritizes a blocking checkout issue over a cosmetic report request.",
+    "ar": "يقدم فريق الاستقرار مشكلة دفع معطلة على طلب تقرير شكلي."
+  },
+  "cases": {
+    "en": "A distributor balances lower inventory against customer-service commitments in a pilot.",
+    "ar": "يوازن موزع خفض المخزون مقابل التزامات خدمة العملاء في تجربة محدودة."
+  },
+  "scenarios": {
+    "en": "A retailer evaluates a promotion’s margin, stock, payment, and accounting effects together.",
+    "ar": "يقيم متجر أثر عرض على الهامش والمخزون والدفع والمحاسبة معًا."
+  },
+  "crossmodule": {
+    "en": "A customer order connects replenishment, fulfillment, invoicing, and bank reconciliation.",
+    "ar": "يربط طلب عميل التوريد والتنفيذ والفوترة والتسوية البنكية."
+  },
+  "versions": {
+    "en": "A consultant checks official release notes before training users on an upgraded workflow.",
+    "ar": "يراجع مستشار ملاحظات الإصدار الرسمية قبل تدريب المستخدمين على دورة مطورة."
+  }
+}

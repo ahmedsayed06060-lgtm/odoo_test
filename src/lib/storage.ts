@@ -1,0 +1,21 @@
+import type { ProgressState, Attempt, ExamSession } from './types';
+export const STORAGE_KEY='odooprep.progress.v1';
+export const freshState=():ProgressState=>({schema:1,attempts:[],bookmarks:[],revealed:[],exams:[],active:null,learningIndex:0,preferences:{lang:'en',theme:'system'}});
+const object=(v:unknown):v is Record<string,unknown>=>!!v&&typeof v==='object'&&!Array.isArray(v);
+const integer=(v:unknown,min:number,max:number)=>typeof v==='number'&&Number.isInteger(v)&&v>=min&&v<=max;
+export function validateImport(raw:unknown,knownIds:Set<string>):ProgressState {
+ if(!object(raw)||raw.schema!==1||!Array.isArray(raw.attempts)||!Array.isArray(raw.bookmarks)||!Array.isArray(raw.exams)||!Array.isArray(raw.revealed)||!object(raw.preferences))throw new Error('Invalid progress file. Expected an OdooPrep v1 JSON export.');
+ const validId=(v:unknown)=>typeof v==='string'&&knownIds.has(v);
+ const validSelection=(v:unknown)=>Array.isArray(v)&&v.length<=10&&v.every(x=>typeof x==='string'&&/^[a-z0-9-]+$/.test(x));
+ const validAttempt=(v:unknown):v is Attempt=>object(v)&&validId(v.questionId)&&validSelection(v.selected)&&typeof v.correct==='boolean'&&integer(v.at,0,8640000000000000)&&['learning','practice','simulation'].includes(String(v.mode));
+ if(raw.attempts.length>100000||!raw.attempts.every(validAttempt))throw new Error('The answer history is invalid or too large.');
+ if(raw.bookmarks.length>1000||!raw.bookmarks.every(validId)||raw.revealed.length>2000||!raw.revealed.every(validId))throw new Error('Invalid bookmark or learning data.');
+ const p=raw.preferences;if(!['en','ar'].includes(String(p.lang))||!['light','dark','system'].includes(String(p.theme)))throw new Error('Invalid preferences.');
+ const validSession=(v:unknown):v is ExamSession=>{if(!object(v)||typeof v.id!=='string'||!object(v.config)||!Array.isArray(v.questionIds)||v.questionIds.length<1||v.questionIds.length>1000||!v.questionIds.every(validId)||new Set(v.questionIds).size!==v.questionIds.length||!object(v.selections)||!Array.isArray(v.flags)||!v.flags.every(validId)||!integer(v.index,0,v.questionIds.length-1)||!integer(v.startedAt,0,8640000000000000)||!(v.submittedAt===null||integer(v.submittedAt,0,8640000000000000))||!(v.deadline===null||integer(v.deadline,0,8640000000000000))||!(v.score===null||(typeof v.score==='number'&&v.score>=0&&v.score<=100))||!Array.isArray(v.attempts)||!v.attempts.every(validAttempt))return false;const c=v.config;return ['learning','practice','simulation'].includes(String(c.mode))&&integer(c.count,1,1000)&&integer(c.duration,1,240)&&integer(c.passing,1,100)&&['stages','modules','versions','difficulties','types'].every(k=>Array.isArray(c[k])&&(c[k] as unknown[]).length<=100&&(c[k] as unknown[]).every(x=>typeof x==='string'||typeof x==='number'));};
+ if(raw.exams.length>500||!raw.exams.every(validSession)||!(raw.active===null||validSession(raw.active)))throw new Error('Invalid examination history.');
+ const consistent=(v:ExamSession)=>{const qids=new Set(v.questionIds);if(Object.keys(v.selections).some(id=>!qids.has(id))||v.flags.some(id=>!qids.has(id)))return false;if(v.submittedAt===null)return v.attempts.length===0;const aids=v.attempts.map(a=>a.questionId);return aids.length===v.questionIds.length&&v.questionIds.every(id=>aids.filter(x=>x===id).length===1);};if(raw.exams.some(v=>!consistent(v as ExamSession))||(raw.active&&(!consistent(raw.active as ExamSession)||(raw.active as ExamSession).submittedAt!==null))||raw.exams.some(v=>v.submittedAt===null))throw new Error('Exam history is inconsistent.');
+ if(!integer(raw.learningIndex,0,10000))throw new Error('Invalid learning position.');
+ return raw as unknown as ProgressState;
+}
+export function loadState(knownIds:Set<string>):{state:ProgressState;warning:boolean}{try{const raw=localStorage.getItem(STORAGE_KEY);return {state:raw?validateImport(JSON.parse(raw),knownIds):freshState(),warning:false};}catch{return {state:freshState(),warning:true};}}
+export function downloadJson(data:unknown,name:string){const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}

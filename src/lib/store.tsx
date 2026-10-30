@@ -1,0 +1,23 @@
+import { createContext, useContext, useEffect, useReducer, useState, useCallback, type ReactNode } from 'react';
+import type { Lang, ProgressState, Attempt, ExamSession } from './types';
+import { freshState, loadState, STORAGE_KEY } from './storage';
+import { gradeSession } from './scoring';
+import { bank } from '../data/questions';
+const ids=new Set(bank.map(q=>q.id));
+type Action={type:'attempt';attempt:Attempt}|{type:'bookmark';id:string}|{type:'reveal';id:string}|{type:'active';session:ExamSession|null}|{type:'finish';session:ExamSession}|{type:'index';index:number}|{type:'preferences';value:Partial<ProgressState['preferences']>}|{type:'replace';state:ProgressState};
+function reducer(s:ProgressState,a:Action):ProgressState{switch(a.type){case 'attempt':return {...s,attempts:[...s.attempts,a.attempt]};case 'bookmark':return {...s,bookmarks:s.bookmarks.includes(a.id)?s.bookmarks.filter(x=>x!==a.id):[...s.bookmarks,a.id]};case 'reveal':return {...s,revealed:[...new Set([...s.revealed,a.id])]};case 'active':return {...s,active:a.session};case 'finish':if(s.exams.some(e=>e.id===a.session.id))return s.active?.id===a.session.id?{...s,active:null}:s;return {...s,active:null,attempts:[...s.attempts,...a.session.attempts],exams:[a.session,...s.exams]};case 'index':return {...s,learningIndex:a.index};case 'preferences':return {...s,preferences:{...s.preferences,...a.value}};case 'replace':return a.state;}}
+interface Store {state:ProgressState;dispatch:React.Dispatch<Action>;lang:Lang;t:(en:string,ar:string)=>string;tr:(v:{en:string;ar:string})=>string;dark:boolean;notify:(en:string,ar:string)=>void;toast:{en:string;ar:string}|null;finish:(session?:ExamSession)=>string|null;storageError:boolean}
+const Context=createContext<Store|null>(null);
+export function Provider({children}:{children:ReactNode}){const [initial]=useState(()=>loadState(ids));const [state,dispatch]=useReducer(reducer,initial.state);const [toast,setToast]=useState<Store['toast']>(null);const [storageError,setStorageError]=useState(false);const [systemDark,setSystemDark]=useState(()=>window.matchMedia('(prefers-color-scheme: dark)').matches);const lang=state.preferences.lang;const t=useCallback((en:string,ar:string)=>lang==='ar'?ar:en,[lang]);const tr=useCallback((v:{en:string;ar:string})=>v[lang],[lang]);const dark=state.preferences.theme==='dark'||(state.preferences.theme==='system'&&systemDark);
+ useEffect(()=>{const media=window.matchMedia('(prefers-color-scheme: dark)');const change=()=>setSystemDark(media.matches);media.addEventListener('change',change);return()=>media.removeEventListener('change',change);},[]);
+ useEffect(()=>{document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.title=lang==='ar'?'OdooPrep — إتقان وظائف Odoo':'OdooPrep — Functional Mastery';},[lang]);
+ useEffect(()=>{document.documentElement.classList.toggle('dark',dark);document.querySelector('meta[name="theme-color"]')?.setAttribute('content',dark?'#15151e':'#7952a7');},[dark]);
+ useEffect(()=>{try{localStorage.setItem(STORAGE_KEY,JSON.stringify(state));setStorageError(false);}catch{setStorageError(true);}},[state]);
+ useEffect(()=>{if(!toast)return;const timer=setTimeout(()=>setToast(null),4500);return()=>clearTimeout(timer);},[toast]);
+ const notify=useCallback((en:string,ar:string)=>setToast({en,ar}),[]);
+ useEffect(()=>{if(initial.warning)notify('Saved data could not be loaded. Export new progress before resetting your browser storage.','تعذر تحميل البيانات المحفوظة. صدّر التقدم الجديد قبل إعادة ضبط تخزين المتصفح.');},[initial.warning,notify]);
+ const finish=useCallback((candidate?:ExamSession)=>{const current=candidate||state.active;if(!current||current.submittedAt)return current?.id||null;const graded=gradeSession(current,bank);if(state.active?.id===graded.id)dispatch({type:'finish',session:graded});return graded.id;},[state.active]);
+ useEffect(()=>{if(!state.active?.deadline||state.active.config.mode!=='simulation')return;const session=state.active;const tick=()=>{if(Date.now()>=session.deadline!){finish(session);notify('Time is up. Your simulation was submitted automatically.','انتهى الوقت. تم تسليم الاختبار التجريبي تلقائيًا.');}};tick();const timer=setInterval(tick,1000);return()=>clearInterval(timer);},[state.active?.id,finish,notify]);
+ return <Context.Provider value={{state,dispatch,lang,t,tr,dark,notify,toast,finish,storageError}}>{children}</Context.Provider>;
+}
+export function useStore(){const value=useContext(Context);if(!value)throw new Error('Missing provider');return value;}
