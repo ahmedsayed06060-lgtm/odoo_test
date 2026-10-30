@@ -1,0 +1,8 @@
+import { bank } from './questions';
+import type { Bi, Source } from '../lib/types';
+export interface ReleaseFeature { id:string; version:number; previous:number; domain:string; title:Bi; summary:Bi; source:Source }
+const domain=(id:string)=>{if(/account|asset|deferred/.test(id))return 'accounting';if(/inventory|reserve|storage|gs1|push|lotvalue|valuation|uom|reorder/.test(id))return 'inventory';if(/pos|loyalty|combo/.test(id))return 'pos';if(/production|barcode|mo|operationcost/.test(id))return 'mrp';if(/crm|saleslines|shopee/.test(id))return 'sales';if(/field|rental|payroll/.test(id))return 'services';if(/import|spreadsheet/.test(id))return 'reporting';return 'general';};
+const grouped=new Map<string,typeof bank>();
+for(const q of bank.filter(q=>q.type==='comparison'&&/^r\d/.test(q.topic))){grouped.set(q.topic,[...(grouped.get(q.topic)||[]),q]);}
+export const releaseFeatures:ReleaseFeature[]=[...grouped].map(([id,qs])=>{const q=qs[0];return {id,version:Number(id.slice(1,3)),previous:Math.min(...qs.flatMap(x=>x.versions)),domain:domain(id),title:q.options.find(o=>o.correct)!.text,summary:q.explanation,source:q.sources[0]};}).sort((a,b)=>a.version-b.version);
+export const featureDomains:Record<string,Bi>={general:{en:'General & administration',ar:'الإدارة والإعدادات العامة'},accounting:{en:'Accounting',ar:'المحاسبة'},inventory:{en:'Inventory & purchasing',ar:'المخزون والمشتريات'},pos:{en:'Point of Sale',ar:'نقاط البيع'},mrp:{en:'Manufacturing',ar:'التصنيع'},sales:{en:'CRM, Sales & eCommerce',ar:'CRM والمبيعات والتجارة'},services:{en:'HR & services',ar:'الموارد البشرية والخدمات'},reporting:{en:'Import & reporting',ar:'الاستيراد والتقارير'}};

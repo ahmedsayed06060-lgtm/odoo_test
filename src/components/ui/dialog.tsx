@@ -1,0 +1,5 @@
+import * as DialogPrimitive from '@radix-ui/react-dialog';
+import { X } from 'lucide-react';
+import type { ReactNode } from 'react';
+import { useStore } from '../../lib/store';
+export function Modal({open,onOpenChange,title,description,children}:{open:boolean;onOpenChange:(v:boolean)=>void;title:string;description?:string;children:ReactNode}){const {t}=useStore();return <DialogPrimitive.Root open={open} onOpenChange={onOpenChange}><DialogPrimitive.Portal><DialogPrimitive.Overlay className="modal-overlay"/><DialogPrimitive.Content className="modal-content" aria-describedby={description?'dialog-description':undefined}><div className="flex items-start justify-between gap-5"><DialogPrimitive.Title className="text-xl font-bold">{title}</DialogPrimitive.Title><DialogPrimitive.Close className="icon-button" aria-label={t('Close','إغلاق')}><X size={20}/></DialogPrimitive.Close></div>{description&&<DialogPrimitive.Description id="dialog-description" className="muted mt-3 text-sm leading-6">{description}</DialogPrimitive.Description>}<div className="mt-6">{children}</div></DialogPrimitive.Content></DialogPrimitive.Portal></DialogPrimitive.Root>;}
