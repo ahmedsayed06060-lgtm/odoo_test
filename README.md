@@ -16,6 +16,9 @@ A complete, local-first preparation application for **Odoo functional and implem
 - Configurable timed certification simulation with automatic grading and detailed review.
 - Progress, accuracy, completion, weak-topic recommendations, readiness indicator, bookmarks, smart revision, exam history, and charts.
 - Version Comparison Lab for Odoo **14–20**, grounded in official documentation and release notes.
+- **100 advanced practical playbooks** (`/advanced`): functional explanation, company scenario, settings path, ordered execution steps, worked numeric example, validation checks, common errors, official sources, and edition/version caveats.
+- **100 industry & business-activity scenarios** (`/industries`): end-to-end Odoo operating models for contracting, real-estate development, hospitals, education, hospitality, retail, logistics, manufacturing, agriculture, professional services, and public/nonprofit activities, with explicit boundaries for specialized systems.
+- Playbook search/filtering, bookmarks, completion tracking, personal notes, progress cards, and inclusion in JSON export/import/reset.
 - Full English/Arabic UI and question localization, RTL/LTR, light/dark/system themes. Arabic uses the self-hosted **Cairo** variable font; English keeps **Inter**.
 - LocalStorage persistence, JSON export/import, and confirmed reset. No login, backend, or user database.
 
@@ -52,19 +55,22 @@ BASE_URL=http://localhost:4173/odoo_test/ npm run test:browser
 
 ```bash
 npm run bank:compile   # Rebuild questions.json and source audit from the authored DSL
+npm run playbooks:compile # Rebuild advanced/industry playbook JSON and source audit
 npm run data:validate  # Structural, bilingual, source, version, and answer-arity checks
+npm run playbooks:validate # Structural, bilingual, module, source, path, and boundary checks
 npm test               # Vitest: scoring, persistence, and bank integrity
 npm run test:browser   # Playwright end-to-end flows (Linux sandbox bootstrap included)
-npm run check          # Data validation + unit tests + production build
+npm run check          # Question + playbook validation, unit tests, and production build
 ```
 
-Browser tests cover learning, practice, simulation timing/auto-submit, filtering, bookmarks, version lab, export/import/reset, mobile RTL, all four language/theme combinations, and loading the Arabic Cairo / English Inter fonts. Screenshots are written to `artifacts/` (ignored by Git).
+Browser tests cover learning, practice, simulation timing/auto-submit, filtering, bookmarks, version lab, advanced/industry playbook search/detail/save/completion/notes, export/import/reset, mobile RTL, all four language/theme combinations, and loading the Arabic Cairo / English Inter fonts. Screenshots are written to `artifacts/` (ignored by Git).
 
 ## Content and source policy
 
 - Questions focus exclusively on functional knowledge, business processes, configuration, workflows, and implementation—not custom development.
 - Every question includes a detailed explanation, practical example, and official Odoo reference.
 - Source paths are resolved against pinned commits of the official `odoo/documentation` repository for versions 14.0–20.0; see `docs/source-audit.json`.
+- Playbook sources are resolved against the official Odoo 20.0 documentation tree and the official editions page; see `docs/playbooks-source-audit.json`. Industry scenarios explicitly state what standard Odoo covers and what requires specialized systems or integrations.
 - Odoo 20 was released in September 2026. Odoo 14–16 are included as historical study versions, not as recommendations for new deployments.
 - Feature availability can depend on edition, hosting, localization, and backports. The app surfaces this caveat rather than presenting version/edition availability as universal.
 - Simulations use configurable study settings and original questions. They do not claim to reproduce confidential or official exam content.
@@ -72,9 +78,13 @@ Browser tests cover learning, practice, simulation timing/auto-submit, filtering
 ## Repository map
 
 - `src/data/bank/*.txt` — authored bilingual concept/question DSL.
+- `src/data/playbooks/{advanced,industry}/*.jsonl` — authored bilingual playbook source records.
+- `scripts/compile-playbooks.ts` — validating playbook compiler and source resolver.
+- `src/data/playbooks/{advanced,industry}.json` — generated runtime playbook libraries.
 - `scripts/compile-bank.ts` — deterministic compiler, option shuffling, source resolution.
 - `src/data/bank/questions.json` — generated runtime bank.
 - `src/lib/` — types, catalog, scoring, storage, global state.
-- `src/pages/` — dashboard, learning, bank, exams, runner, results, progress, revision, version lab, settings.
+- `src/pages/` — dashboard, learning, bank, exams, runner, results, progress, revision, version lab, playbooks, settings.
 - `docs/source-audit.json` — per-question official source references and pinned documentation commits.
+- `docs/playbooks-source-audit.json` — per-playbook official source references and pinned documentation commit.
 - `docs/validation-report.json` — latest structural validation summary.

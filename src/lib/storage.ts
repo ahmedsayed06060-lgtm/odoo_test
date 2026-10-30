@@ -1,6 +1,6 @@
 import type { ProgressState, Attempt, ExamSession } from './types';
 export const STORAGE_KEY='odooprep.progress.v1';
-export const freshState=():ProgressState=>({schema:1,attempts:[],bookmarks:[],revealed:[],exams:[],active:null,learningIndex:0,preferences:{lang:'en',theme:'system'}});
+export const freshState=():ProgressState=>({schema:1,attempts:[],bookmarks:[],revealed:[],exams:[],active:null,learningIndex:0,playbookBookmarks:[],playbookCompleted:[],playbookNotes:{},preferences:{lang:'en',theme:'system'}});
 const object=(v:unknown):v is Record<string,unknown>=>!!v&&typeof v==='object'&&!Array.isArray(v);
 const integer=(v:unknown,min:number,max:number)=>typeof v==='number'&&Number.isInteger(v)&&v>=min&&v<=max;
 export function validateImport(raw:unknown,knownIds:Set<string>):ProgressState {
@@ -15,6 +15,10 @@ export function validateImport(raw:unknown,knownIds:Set<string>):ProgressState {
  if(raw.exams.length>500||!raw.exams.every(validSession)||!(raw.active===null||validSession(raw.active)))throw new Error('Invalid examination history.');
  const consistent=(v:ExamSession)=>{const qids=new Set(v.questionIds);if(Object.keys(v.selections).some(id=>!qids.has(id))||v.flags.some(id=>!qids.has(id)))return false;if(v.submittedAt===null)return v.attempts.length===0;const aids=v.attempts.map(a=>a.questionId);return aids.length===v.questionIds.length&&v.questionIds.every(id=>aids.filter(x=>x===id).length===1);};if(raw.exams.some(v=>!consistent(v as ExamSession))||(raw.active&&(!consistent(raw.active as ExamSession)||(raw.active as ExamSession).submittedAt!==null))||raw.exams.some(v=>v.submittedAt===null))throw new Error('Exam history is inconsistent.');
  if(!integer(raw.learningIndex,0,10000))throw new Error('Invalid learning position.');
+ const playbookId=(v:unknown)=>typeof v==='string'&&/^(ADV|IND)-(00[1-9]|0[1-9][0-9]|100)$/.test(v);
+ const cleanList=(v:unknown,name:string)=>{if(v===undefined)return [];if(!Array.isArray(v)||v.length>200||!v.every(playbookId)||new Set(v).size!==v.length)throw new Error(`Invalid ${name}.`);return v as string[];};
+ raw.playbookBookmarks=cleanList(raw.playbookBookmarks,'playbook bookmarks');raw.playbookCompleted=cleanList(raw.playbookCompleted,'playbook completion');
+ if(raw.playbookNotes===undefined)raw.playbookNotes={};if(!object(raw.playbookNotes)||Object.keys(raw.playbookNotes).length>200||Object.entries(raw.playbookNotes).some(([k,v])=>!playbookId(k)||typeof v!=='string'||v.length>2000))throw new Error('Invalid playbook notes.');
  return raw as unknown as ProgressState;
 }
 export function loadState(knownIds:Set<string>):{state:ProgressState;warning:boolean}{try{const raw=localStorage.getItem(STORAGE_KEY);return {state:raw?validateImport(JSON.parse(raw),knownIds):freshState(),warning:false};}catch{return {state:freshState(),warning:true};}}

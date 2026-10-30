@@ -9,9 +9,11 @@
     "preview": "vite preview --host 0.0.0.0",
     "test": "vitest run",
     "data:validate": "tsx scripts/validate-bank.ts",
+    "playbooks:compile": "tsx scripts/compile-playbooks.ts",
+    "playbooks:validate": "tsx scripts/validate-playbooks.ts",
     "bank:compile": "tsx scripts/compile-bank.ts",
     "test:browser": "node tests/browser.mjs",
-    "check": "npm run data:validate && npm test && npm run build"
+    "check": "npm run data:validate && npm run playbooks:validate && npm test && npm run build"
   },
   "dependencies": {
     "@fontsource-variable/cairo": "^5.3.0",
