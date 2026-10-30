@@ -19,6 +19,16 @@ A complete, local-first preparation application for **Odoo functional and implem
 - Full English/Arabic UI and question localization, RTL/LTR, light/dark/system themes.
 - LocalStorage persistence, JSON export/import, and confirmed reset. No login, backend, or user database.
 
+## GitHub Pages hosting
+
+Configured website address: **https://ahmedsayed06060-lgtm.github.io/odoo_test/**
+
+The static-hosting workflow is `.github/workflows/github-pages.yml`. It validates and builds the app, publishes the production artifact, then runs browser tests against the actual hosted website. The app uses relative asset URLs and hash routes so refreshing a learning or exam page does not produce a GitHub Pages 404.
+
+One-time repository setup: open **Settings → Pages → Build and deployment → Source → GitHub Actions**. Publishing a public site from a private repository depends on the account’s GitHub Pages entitlement; making the source repository public is a separate, explicit choice. See [deployment instructions](docs/DEPLOYMENT.md).
+
+Progress is stored separately for each website origin. To move from the Arena preview to GitHub Pages, export JSON from the preview’s Settings page and import it on the hosted site.
+
 ## Run locally
 
 ```bash
@@ -31,6 +41,11 @@ The development server binds to `0.0.0.0:5173`.
 ```bash
 npm run build      # TypeScript + production build
 npm run preview    # Serve the production build
+
+# Test the production build at its GitHub Pages-style path:
+npx vite preview --host 0.0.0.0 --port 4173 --base=/odoo_test/
+# In another terminal:
+BASE_URL=http://localhost:4173/odoo_test/ npm run test:browser
 ```
 
 ## Quality checks
