@@ -2,7 +2,7 @@ name: Publish OdooPrep to GitHub Pages
 
 on:
   push:
-    branches: [main, arena/ef231288-odoo-test]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -16,7 +16,8 @@ concurrency:
 
 jobs:
   build:
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/arena/ef231288-odoo-test'
+    # The github-pages environment permits deployments from main only.
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
