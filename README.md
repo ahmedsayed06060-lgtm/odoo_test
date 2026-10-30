@@ -16,7 +16,7 @@ A complete, local-first preparation application for **Odoo functional and implem
 - Configurable timed certification simulation with automatic grading and detailed review.
 - Progress, accuracy, completion, weak-topic recommendations, readiness indicator, bookmarks, smart revision, exam history, and charts.
 - Version Comparison Lab for Odoo **14–20**, grounded in official documentation and release notes.
-- Full English/Arabic UI and question localization, RTL/LTR, light/dark/system themes.
+- Full English/Arabic UI and question localization, RTL/LTR, light/dark/system themes. Arabic uses the self-hosted **Cairo** variable font; English keeps **Inter**.
 - LocalStorage persistence, JSON export/import, and confirmed reset. No login, backend, or user database.
 
 ## GitHub Pages hosting
@@ -58,7 +58,7 @@ npm run test:browser   # Playwright end-to-end flows (Linux sandbox bootstrap in
 npm run check          # Data validation + unit tests + production build
 ```
 
-Browser tests cover learning, practice, simulation timing/auto-submit, filtering, bookmarks, version lab, export/import/reset, mobile RTL, and all four language/theme combinations. Screenshots are written to `artifacts/` (ignored by Git).
+Browser tests cover learning, practice, simulation timing/auto-submit, filtering, bookmarks, version lab, export/import/reset, mobile RTL, all four language/theme combinations, and loading the Arabic Cairo / English Inter fonts. Screenshots are written to `artifacts/` (ignored by Git).
 
 ## Content and source policy
 

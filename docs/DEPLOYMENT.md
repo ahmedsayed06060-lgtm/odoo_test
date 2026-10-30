@@ -24,7 +24,7 @@ The workflow:
 - builds the static Vite application;
 - uploads only `dist/`, not source, local browser data, or reference caches;
 - deploys that artifact to the `github-pages` environment;
-- runs the full Playwright suite against the live Pages URL, including Arabic RTL, themes, exam reloads, timer expiry, and JSON backup/restore;
+- runs the full Playwright suite against the live Pages URL, including Arabic RTL with the Cairo font, English Inter typography, themes, exam reloads, timer expiry, and JSON backup/restore;
 - keeps verification screenshots as a short-lived Actions artifact.
 
 Official GitHub actions are pinned to reviewed commit SHAs. The workflow grants only contents-read, pages-write, and OIDC identity-write permissions. Checkout does not persist credentials.
